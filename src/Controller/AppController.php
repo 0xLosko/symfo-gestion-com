@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class AppController extends AbstractController
 {
-    #[Route(path: "/dashboard", name: "dashboard")]
+    #[Route(path: "/", name: "dashboard")]
     public function articles(): Response
     {
         return $this->render('components/dashboard.html.twig');
@@ -23,7 +23,7 @@ class AppController extends AbstractController
     #[Route(path: "/customer", name: "customer")]
     public function customer(): Response
     {
-        return $this->render('components/dashboard.html.twig');
+        return $this->render('components/customer.html.twig');
     }
 
     #[Route(path: "/host", name: "host")]
