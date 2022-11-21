@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+{% block content_right %}
+    <section class="right-section">
+        <div id="add">
+            <h1 class="title-right-section"> Client existant</h1>
+
+            <div>
+                <a class='btn-form-top'href={{ path('customer') }}>Ajouter</a>
+                <a class='btn-form-top' id="contacts" href="">Modifier/Supprimer</a>
+            </div>
+            <div class="right-contents">
+                <div>
+                    <form class="upd-del-cust-form" method="post">
+                        <div>
+                            <label class="upd-del-cust-label" for="name">Nom</label>
+                            <select class="upd-del-cust-input" type="text" id="name" name="name"></select>
+                        </div>
+                        <div>
+                            <label class="upd-del-cust-label" for="code">Code Interne</label>
+                            <input class="upd-del-cust-input" type="text" id="code" name="code" placeholder="Champ généré automatiquement" disabled>
+                        </div>
+                        <div>
+                            <label class="upd-del-cust-label" for="notes">Notes / Remarques</label>
+                            <textarea class="upd-del-cust-textarea upd-del-host-input" id="notes" name="notes"></textarea>
+                        </div>
+                        <div class="btn-form-bottom">
+                            <input id="btn-cancel" type="submit" value="Annuler">
+                            <input id="btn-save" type="submit" name="add" value="Sauvegarder">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
