@@ -1,0 +1,263 @@
+/* DELETE DEFAULT BODY-MARGIN */
+body {
+    margin: 0;
+}
+/* NAVBAR */
+nav {
+    width: 100%;
+    background-color: var(--main-color);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 10vh;
+}
+
+.logo {
+    margin: 2em;
+    width: 14em;
+}
+
+.nav-icon {
+    color: var(--white);
+    font-size: 1.8em;
+}
+
+/* MAIN */
+main {
+    display: flex;
+    flex-direction: row;
+    background: var(--bg-color);
+    height: 90vh;
+    width: auto;
+}
+
+/* LEFT-SECTION */
+.left-section {
+    background-color: var(--white);
+    width: 30vh;
+    margin-right: 2vw;
+}
+
+.layouts {
+    margin-top: 4em;
+}
+
+.layout {
+    font-weight: bold;
+    border-bottom: 1px solid var(--bg-color);
+    padding: 1em 0 1em 1.5em;
+}
+
+.layout:hover {
+    cursor: pointer;
+}
+
+.layout i {
+    margin-right: 3px;
+}
+
+/* RIGHT-SECTION NEW USER*/
+.right-section{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+}
+
+#note{
+    max-height: 200px;
+}
+.title-right-section{
+    margin-top: 2.5vh;
+    font-size: 2.5em;
+    margin-bottom: 7vh;
+}
+
+.btn-form-top{
+    text-decoration: none;
+    color: var(--black);
+    background-color: var(--white);
+    padding: 1em;
+    margin-right: 0.5vw;
+}
+
+#contacts{
+    background-color: #F2F2F2;
+}
+.right-contents{
+    background-color: var(--white);
+    width: 80vw;
+    margin-top: 2vh;
+}
+
+.error{
+    color: red;
+    font-weight: bold;
+}
+
+.add-user-form{
+    display: flex;
+    flex-direction: column;
+    padding: 2% 3%;
+    border-width: 2px;
+}
+
+.add-user-label{
+    display:inline-block;
+    width: 10vw;
+}
+
+.add-user-input{
+    width: 14vw;
+    height: 4vh;
+    margin-top: 1vh;
+    border-width: 2px;
+    border-color: var(--bg-color);
+    border-radius: 3%;
+}
+
+.input-checkbox{
+    margin-top: 1vh;
+    border-width: 2px;
+    border-color: var(--bg-color);
+    border-radius: 3%;
+}
+.add-user-textarea{
+    height: 15vh;
+}
+
+.btn-form-bottom{
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+    margin: 0 2%;
+}
+
+#btn-cancel{
+    text-decoration: none;
+    color: var(--main-color);
+    background-color: var(--white);
+    height: 3.5vh;
+    width: fit-content;
+    border-color: var(--main-color);
+}
+
+#btn-save{
+    text-decoration: none;
+    color: var(--white);
+    margin-left: 10px;
+    background-color: var(--main-color);
+    height: 3.5vh;
+    width: fit-content;
+    border-color: var(--main-color);
+}
+
+.flexRow{
+    display: flex;
+    flex-direction: row;
+}
+
+.table{
+    width: 100%;
+    padding: 15px;
+}
+
+.th{
+    background-color:var(--grey);
+    color: var(--white);
+}
+
+.td{
+    background-color: var(--grey-tbl);
+    padding: 5px;
+}
+
+#dossierLPLabel , #lienMLabel{
+    margin-left: 30px;
+}
+/* The Modal (background) */
+.modal {
+display: none;
+position: fixed;
+z-index: 3;
+padding-top: 100px; 
+left: 0;
+top: 0;
+width: 100%; 
+height: 100%; 
+overflow: auto;
+background-color: rgb(0,0,0);
+background-color: rgba(0,0,0,0.4); 
+}
+
+/* Modal Content */
+.modal-content {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+background-color: #fefefe;
+margin: auto;
+padding: 20px;
+border-radius: 8px;
+border: 1px solid #888;
+width: 80%;
+}
+/* actionModal */
+.actionModal, .supModal {
+font-size: 16px;
+font-weight: 600;
+color: #fff;
+cursor: pointer;
+padding: 10px 30px;
+text-align:center;
+border: none;
+background-size: 300% 100%;
+border-radius: 50px;
+/*moz-transition: all .4s ease-in-out;*/
+-o-transition: all .4s ease-in-out;
+-webkit-transition: all .4s ease-in-out;
+transition: all .4s ease-in-out;
+}
+.btn-con {
+   display: flex;
+   gap: 1rem;
+}
+.actionModal:hover {
+background-position: 100% 0;
+/*moz-transition: all .4s ease-in-out;*/
+-o-transition: all .4s ease-in-out;
+-webkit-transition: all .4s ease-in-out;
+transition: all .4s ease-in-out;
+}
+
+.actionModal:focus {
+outline: none;
+}
+
+.actionModal.bn19, .supModal.bn19{
+background-image: linear-gradient(
+    to right,
+    #fac636,
+    #e43603,
+    #e85a19
+);
+}
+/* The Close Button */
+.close {
+color: #aaaaaa;
+margin-left: 90%;
+font-size: 28px;
+font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+color: #000;
+text-decoration: none;
+cursor: pointer;
+}
+
+.disable {
+    background-color: grey;
+    background-image: none!important;
+}
