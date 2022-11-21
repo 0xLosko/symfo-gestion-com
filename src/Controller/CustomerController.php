@@ -13,4 +13,10 @@ class CustomerController extends AbstractController
     {
         return $this->render('components/customer.html.twig');
     }
+    
+    #[Route(path: "customer/customertUD", name: "customer/customerUD")]
+    public function customerUD(): Response
+    {
+        return $this->render('customer/customerUD.html.twig');
+    }
 }
