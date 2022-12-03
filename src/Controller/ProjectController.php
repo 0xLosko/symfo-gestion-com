@@ -11,6 +11,6 @@ class ProjectController extends AbstractController
     #[Route(path: "/project", name: "project")]
     public function project(): Response
     {
-        return $this->render('components/project.html.twig');
+        return $this->render('project/project.html.twig');
     }
 }

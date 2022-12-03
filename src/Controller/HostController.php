@@ -11,9 +11,9 @@ class HostController extends AbstractController
     #[Route(path: "/host", name: "host")]
     public function host(): Response
     {
-        return $this->render('components/host.html.twig');
+        return $this->render('host/hostAdd.html.twig');
     }
-    
+
     #[Route(path: "host/hostUD", name: "host/hostUD")]
     public function hostUD(): Response
     {

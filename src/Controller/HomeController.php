@@ -11,6 +11,6 @@ class HomeController extends AbstractController
     #[Route(path: "/", name: "dashboard")]
     public function articles(): Response
     {
-        return $this->render('components/dashboard.html.twig');
+        return $this->render('./dashboard/dashboard.html.twig');
     }
 }
