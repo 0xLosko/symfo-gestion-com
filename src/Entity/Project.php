@@ -40,6 +40,9 @@ class Project
     #[ORM\ManyToOne(inversedBy: 'projects')]
     private ?Customer $customer = null;
 
+    #[ORM\Column(type: Types::SMALLINT, nullable: true)]
+    private ?int $manageServer = null;
+
     public function __construct()
     {
         $this->environments = new ArrayCollection();
@@ -97,6 +100,7 @@ class Project
 
         return $this;
     }
+
 
     public function getNotes(): ?string
     {
@@ -160,6 +164,18 @@ class Project
     public function setCustomer(?Customer $customer): self
     {
         $this->customer = $customer;
+
+        return $this;
+    }
+
+    public function getManageServer(): ?int
+    {
+        return $this->manageServer;
+    }
+
+    public function setManageServer(?int $manageServer): self
+    {
+        $this->manageServer = $manageServer;
 
         return $this;
     }
