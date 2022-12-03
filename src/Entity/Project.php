@@ -34,6 +34,12 @@ class Project
     #[ORM\OneToMany(mappedBy: 'project', targetEntity: Environment::class)]
     private Collection $environments;
 
+    #[ORM\ManyToOne(inversedBy: 'projects')]
+    private ?Host $host = null;
+
+    #[ORM\ManyToOne(inversedBy: 'projects')]
+    private ?Customer $customer = null;
+
     public function __construct()
     {
         $this->environments = new ArrayCollection();
@@ -130,6 +136,30 @@ class Project
                 $environment->setProject(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getHost(): ?Host
+    {
+        return $this->host;
+    }
+
+    public function setHost(?Host $host): self
+    {
+        $this->host = $host;
+
+        return $this;
+    }
+
+    public function getCustomer(): ?Customer
+    {
+        return $this->customer;
+    }
+
+    public function setCustomer(?Customer $customer): self
+    {
+        $this->customer = $customer;
 
         return $this;
     }
