@@ -22,6 +22,12 @@ class Contact
     #[ORM\Column(length: 255)]
     private ?string $role = null;
 
+    #[ORM\ManyToOne(inversedBy: 'contacts')]
+    private ?Host $host = null;
+
+    #[ORM\ManyToOne(inversedBy: 'contacts')]
+    private ?Customer $customer = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -59,6 +65,30 @@ class Contact
     public function setRole(string $role): self
     {
         $this->role = $role;
+
+        return $this;
+    }
+
+    public function getHost(): ?Host
+    {
+        return $this->host;
+    }
+
+    public function setHost(?Host $host): self
+    {
+        $this->host = $host;
+
+        return $this;
+    }
+
+    public function getCustomer(): ?Customer
+    {
+        return $this->customer;
+    }
+
+    public function setCustomer(?Customer $customer): self
+    {
+        $this->customer = $customer;
 
         return $this;
     }
