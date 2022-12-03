@@ -25,6 +25,9 @@ class Environment
     #[ORM\Column(length: 255)]
     private ?string $phpMyAdminLink = null;
 
+    #[ORM\ManyToOne(inversedBy: 'environments')]
+    private ?Project $project = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -74,6 +77,18 @@ class Environment
     public function setPhpMyAdminLink(string $phpMyAdminLink): self
     {
         $this->phpMyAdminLink = $phpMyAdminLink;
+
+        return $this;
+    }
+
+    public function getProject(): ?Project
+    {
+        return $this->project;
+    }
+
+    public function setProject(?Project $project): self
+    {
+        $this->project = $project;
 
         return $this;
     }

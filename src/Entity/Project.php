@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ProjectRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -28,6 +30,14 @@ class Project
 
     #[ORM\Column(type: Types::TEXT)]
     private ?string $notes = null;
+
+    #[ORM\OneToMany(mappedBy: 'project', targetEntity: Environment::class)]
+    private Collection $environments;
+
+    public function __construct()
+    {
+        $this->environments = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -90,6 +100,36 @@ class Project
     public function setNotes(string $notes): self
     {
         $this->notes = $notes;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Environment>
+     */
+    public function getEnvironments(): Collection
+    {
+        return $this->environments;
+    }
+
+    public function addEnvironment(Environment $environment): self
+    {
+        if (!$this->environments->contains($environment)) {
+            $this->environments->add($environment);
+            $environment->setProject($this);
+        }
+
+        return $this;
+    }
+
+    public function removeEnvironment(Environment $environment): self
+    {
+        if ($this->environments->removeElement($environment)) {
+            // set the owning side to null (unless already changed)
+            if ($environment->getProject() === $this) {
+                $environment->setProject(null);
+            }
+        }
 
         return $this;
     }
